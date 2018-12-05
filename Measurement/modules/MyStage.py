@@ -54,7 +54,7 @@ class MyStage(object):
     DEBUG = False
     serialPort = ''
         
-    def __init__(self, os, serial_module, n_xips):
+    def __init__(self, os, serial_module, n_xips=1):
         self.os = os
         self.sl = serial_module        
         self.n_xips = n_xips
@@ -187,7 +187,7 @@ class MyAxis(object):
     
     def __init__(self, axis_number, parent):
         #self.name = 'Axis' + axis_number        
-        self.axis_number = axis_number
+        self.axis_number = str(axis_number)
         self.parent = parent
         self.step_down = [0 for n in range(self.parent.n_xips)]
         self.step_out = [0 for n in range(self.parent.n_xips)]
@@ -205,6 +205,7 @@ class MyAxis(object):
         #return self.send('AX_ncal_')
 
     def move_relative(self, by):
+        
         if self.axis_number == '1':
             self.send(b'%f_0_0_r_' % (by))
         elif self.axis_number == '2':
