@@ -1,0 +1,7 @@
+{
+    "experiment": "FilterJosune_Test#1",
+    "detector": "QEPro",
+    "sensors": "Fluorescence Sensor",
+    "dir": "/home/nils/Research/Instrumentation/PythonLab/Measurement/test/",
+    "t0": 1551697935.908857
+}
